@@ -5,6 +5,7 @@
 
 typedef std::pair<int, int> Node;
 
+// O(N)
 int main(void)
 {
     std::ios::sync_with_stdio(false);

@@ -1,4 +1,4 @@
-// 좋은 수 구하기 (1253)
+// 좋은 수 구하기 (1253) *****
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -15,6 +15,7 @@ int main(void)
     std::cin >> N;
     std::vector<int> vec(N, 0);
 
+    // 입력값이 음수도 될 수 있음
     for (int i = 0; i < N; i++)
     {
         std::cin >> vec[i];
