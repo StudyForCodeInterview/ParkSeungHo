@@ -197,9 +197,39 @@ static void CopyArray(int* src, int* dst, int N)
 // 2단계 - 정복(Conquer)
 // 3단계 - 결합(Combine)
 
-void Merge(int* arr, int left, int right)
+void MergeTwoArea(int* arr, int left, int mid, int right)
 {
+    int fIdx = left;
+    int rIdx = mid + 1;
+    int i;
 
+    // 아예 새로운 배열 만듦.
+    int* sortArr = new int[right + 1];
+    int sIdx = left;
+
+    while (fIdx <= mid && rIdx <= right)
+    {
+        if (arr[fIdx] <= arr[rIdx])
+            sortArr[sIdx++] = arr[fIdx++];
+        else
+            sortArr[sIdx++] = arr[rIdx++];
+    }
+
+    if (fIdx > mid)
+    {
+        for (int i = rIdx; i <= right; i++)
+            sortArr[sIdx++] = arr[i];
+    }
+    else
+    {
+        for (int i = fIdx; i <= mid; i++)
+            sortArr[sIdx++] = arr[i];
+    }
+
+    for (i = left; i <= right; i++)
+        arr[i] = sortArr[i];
+
+    delete sortArr;
 }
 
 void MergeSort(int* arr, int left, int right)
@@ -212,5 +242,63 @@ void MergeSort(int* arr, int left, int right)
         MergeSort(arr, left, mid);
         MergeSort(arr, mid + 1, right);
         MergeTwoArea(arr, left, mid, right);
+    }
+}
+
+// QuickSort
+void swap(int arr[], int idx1, int idx2)
+{
+    int tmp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = tmp;
+}
+
+int Partition(int arr[], int left, int right)
+{
+    int pivot = arr[left];  // 가장 왼쪽을 피벗으로 함.
+    int low = left + 1;
+    int high = right;
+
+    // [3, 3, 3] 작동 안함
+    //while (low <= high)
+    //{
+    //    // 피벗보다 큰 값을 찾는 과정
+    //    while (pivot > arr[low])
+    //        low++;
+    //    // 피벗보다 작은 값을 찾는 과정
+    //    while (pivot < arr[high])
+    //        high--;
+    //    if (low <= high)
+    //        swap(arr, low, high);
+    //}
+    while (low <= high)
+    {
+        while (pivot >= arr[low] && low <= right)
+            low++;
+        while (pivot <= arr[high] && high >= (left + 1))
+            high--;
+        if (low <= high)
+            swap(arr, low, high);
+    }
+
+    swap(arr, left, high);  // 피벗과 high가 가리키는 대상 교환.
+    return high;
+}
+
+void QuickSort(int arr[], int left, int right)
+{
+    if (left <= right)
+    {
+        int pivot = Partition(arr, left, right);
+        QuickSort(arr, left, pivot - 1);
+        QuickSort(arr, pivot + 1, right);
+        // K번째 수 (A[K-1])를 구하는 것이라면 이렇게 최적화 가능.
+        /*int pivot = Partition(arr, left, right);
+        if (pivot == K - 1)
+            return;
+        else if (K - 1 < pivot)
+            QuickSort(arr, left, pivot - 1);
+        else
+            QuickSort(arr, pivot + 1, right);*/
     }
 }

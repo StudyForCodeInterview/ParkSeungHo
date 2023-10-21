@@ -16,9 +16,12 @@
     <Filter Include="소스 파일\첫번째">
       <UniqueIdentifier>{12cfe99c-f5f8-4a43-b30e-85a42a1a8c57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\두번째">
+      <UniqueIdentifier>{37733554-5d84-4b52-b46c-496344468790}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="000.cpp">
+    <ClCompile Include="000 %28정렬%29.cpp">
       <Filter>소스 파일\첫번째</Filter>
     </ClCompile>
     <ClCompile Include="001.cpp">
@@ -68,6 +71,72 @@
     </ClCompile>
     <ClCompile Include="test2.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="015.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="016.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="017.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="018.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="019.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="020.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="021.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="022.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="023.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="024.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="025.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="026.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="027.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="028.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="029.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="030.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="031.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="032.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="033.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="034.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="035.cpp">
+      <Filter>소스 파일\두번째</Filter>
+    </ClCompile>
+    <ClCompile Include="036.cpp">
+      <Filter>소스 파일\두번째</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
