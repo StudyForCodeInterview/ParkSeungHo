@@ -115,6 +115,7 @@
     <ClCompile Include="034.cpp" />
     <ClCompile Include="035.cpp" />
     <ClCompile Include="036.cpp" />
+    <ClCompile Include="RadixSort.cpp" />
     <ClCompile Include="test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
