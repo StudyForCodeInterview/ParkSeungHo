@@ -21,7 +21,7 @@ int main(void)
 
     std::sort(A.begin(), A.end());
 
-    int count = 0;
+    int g_count = 0;
     int i = 0;
     int j = N - 1;
 
@@ -33,12 +33,12 @@ int main(void)
             j--;
         else
         {
-            count++;
+            g_count++;
             i++;
             j--;
         }
     }
     
-    std::cout << count << std::endl;
+    std::cout << g_count << std::endl;
     return 0;
 }
