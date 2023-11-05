@@ -10,32 +10,29 @@ vector<vector<int>> adjustList;
 vector<int> visited;
 bool ret;
 
-void DFS(int depth)
+void DFS(int startIndex, int depth)
 {
     if (depth >= 5 || ret == true)
     {
         ret = true;
         return;
     }
-    for (int i = 0; i < adjustList[depth].size(); i++)
+    visited[startIndex] = true;
+    for (int i = 0; i < adjustList[startIndex].size(); i++)
     {
-        if (visited[adjustList[depth][i]] == false)
+        int index = adjustList[startIndex][i];
+        if (visited[index] == false)
         {
-            visited[adjustList[depth][i]] = true;
-            if (depth == N - 1)
-            {
-                ret = true;
-                return;
-            }
-            DFS(depth + 1);
+            DFS(index, depth + 1);
         }
     }
+    visited[startIndex] = false;
 }
 
 int main(void)
 {
-    adjustList.resize(200);
-    visited.resize(200);
+    adjustList.resize(2000);
+    visited.resize(2000);
 
     scanf("%d %d", &N, &M);
     for (int i = 0; i < M; i++)
@@ -45,7 +42,12 @@ int main(void)
         adjustList[b].push_back(a);
     }
 
-    DFS(0);
+    for (int i = 0; i < N; i++)
+    {
+        DFS(i, 1);
+        if (ret == true)
+            break;
+    }
 
     printf("%d\n", ret);
     return 0;
