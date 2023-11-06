@@ -13,11 +13,16 @@ void DFS(int V)
 {
     visited[V] = true;
     printf("%d ", V);   
-    vector<int>::iterator it;
+    /*vector<int>::iterator it;
     for (it = adjustList[V].begin(); it != adjustList[V].end(); it++)
     {
         if (visited[*it] == false)
             DFS(*it);
+    }*/
+    for (int i : adjustList[V])
+    {
+        if (visited[i] == false)
+            DFS(i);
     }
 }
 void BFS(int V)
@@ -35,6 +40,27 @@ void BFS(int V)
         for (it = adjustList[n].begin(); it != adjustList[n].end(); it++)
         {
             q.push(*it);
+        }
+    }
+}
+
+void BFS2(int v)
+{
+    q.push(v);
+    visited[v] = true;
+
+    while (!q.empty())
+    {
+        int n = q.front();
+        q.pop();
+        printf("%d ", n);
+        for (int i : adjustList[n])
+        {
+            if (visited[i] == false)
+            {
+                visited[i] = true;
+                q.push(i);
+            }
         }
     }
 }
