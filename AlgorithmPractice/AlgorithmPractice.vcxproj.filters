@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\두번째+">
       <UniqueIdentifier>{5997f35a-5b84-4cdf-9dc8-04e5ad1b5c2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\세번째">
+      <UniqueIdentifier>{d6023545-1d77-49c4-94d9-af5a40d1e3b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="000 %28정렬%29.cpp">
@@ -164,6 +167,33 @@
     </ClCompile>
     <ClCompile Include="052.cpp">
       <Filter>소스 파일\두번째+</Filter>
+    </ClCompile>
+    <ClCompile Include="067.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="068.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="069.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="070.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="071.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="072.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="073.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="074.cpp">
+      <Filter>소스 파일\세번째</Filter>
+    </ClCompile>
+    <ClCompile Include="075.cpp">
+      <Filter>소스 파일\세번째</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
