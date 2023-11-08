@@ -18,8 +18,6 @@ void DFS(int root);
 
 int main(void)
 {
-    
-
     scanf("%d", &N);
     parentArr.resize(N);
     adjustList.resize(N);
@@ -38,7 +36,6 @@ int main(void)
         adjustList[num].push_back(i);
     }
     scanf("%d", &delNode);
-    adjustList[delNode].clear();
 
     DFS(root);
     
@@ -48,14 +45,22 @@ int main(void)
 
 void DFS(int root)
 {
+    int child = 0;
     visited[root] = true;
+
+    if (root == delNode)
+        return;
 
     for (int i : adjustList[root])
     {
         if (visited[i] == false && i != delNode)
         {
-
+            visited[i] = true;
+            child++;
+            DFS(i);
         }
-        else if (visited[i])
     }
+
+    if (child == 0)
+        ret++;
 }

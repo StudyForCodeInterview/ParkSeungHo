@@ -139,7 +139,9 @@
     <ClCompile Include="067.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="068.cpp" />
+    <ClCompile Include="068.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="069.cpp" />
     <ClCompile Include="070.cpp" />
     <ClCompile Include="071.cpp" />
