@@ -67,7 +67,7 @@ long GetValue(int startIndex, int endIndex)
         if (startIndex % 2 == 1)
         {
             min = std::min(min, arr[startIndex++]);
-            if (min < ) !!!
+            //if (min < ) !!!
         }
         startIndex /= 2;
 
