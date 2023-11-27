@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\세번째">
       <UniqueIdentifier>{d6023545-1d77-49c4-94d9-af5a40d1e3b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\네번째">
+      <UniqueIdentifier>{9442bfba-688a-45e1-b34c-47743ae98081}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="000 %28정렬%29.cpp">
@@ -197,6 +200,57 @@
     </ClCompile>
     <ClCompile Include="test3.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="084.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="085.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="086.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="087.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="088.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="089.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="090.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="091.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="092.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="093.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="094.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="095.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="096.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="097.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="098.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="099.cpp">
+      <Filter>소스 파일\네번째</Filter>
+    </ClCompile>
+    <ClCompile Include="100.cpp">
+      <Filter>소스 파일\네번째</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
