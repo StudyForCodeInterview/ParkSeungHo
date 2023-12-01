@@ -247,12 +247,16 @@
     <ClCompile Include="089.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="090.cpp" />
+    <ClCompile Include="090.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">아니오</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="091.cpp" />
     <ClCompile Include="092.cpp" />
     <ClCompile Include="093.cpp" />
     <ClCompile Include="094.cpp" />
-    <ClCompile Include="095.cpp" />
+    <ClCompile Include="095.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="096.cpp" />
     <ClCompile Include="097.cpp" />
     <ClCompile Include="098.cpp" />
