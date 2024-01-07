@@ -14,7 +14,7 @@ int N;
 int delNode;
 int root;
 
-void DFS(int root);
+void DFS_Stack(int root);
 
 int main(void)
 {
@@ -37,13 +37,13 @@ int main(void)
     }
     scanf("%d", &delNode);
 
-    DFS(root);
+    DFS_Stack(root);
     
     printf("%d\n", ret);
     return 0;
 }
 
-void DFS(int root)
+void DFS_Stack(int root)
 {
     int child = 0;
     visited[root] = true;
@@ -57,7 +57,7 @@ void DFS(int root)
         {
             visited[i] = true;
             child++;
-            DFS(i);
+            DFS_Stack(i);
         }
     }
 

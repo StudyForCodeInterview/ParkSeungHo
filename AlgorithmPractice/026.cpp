@@ -9,7 +9,7 @@ vector<vector<int>> adjustList;
 vector<int> visited;
 std::queue<int> q;
 
-void DFS(int V)
+void DFS_Stack(int V)
 {
     visited[V] = true;
     printf("%d ", V);   
@@ -22,7 +22,7 @@ void DFS(int V)
     for (int i : adjustList[V])
     {
         if (visited[i] == false)
-            DFS(i);
+            DFS_Stack(i);
     }
 }
 void BFS(int V)
@@ -87,7 +87,7 @@ int main(void)
         sort(adjustList[i].begin(), adjustList[i].end());
     }
 
-    DFS(V);
+    DFS_Stack(V);
     printf("\n");
     fill(visited.begin(), visited.end(), 0);
     BFS(V);

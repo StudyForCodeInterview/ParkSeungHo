@@ -47,56 +47,135 @@
 //    return 0;
 //}
 
+//#include <iostream>
+//#include <vector>
+//using namespace std;
+//
+//static vector<vector<int>> A;
+//static vector<bool> visited;
+//void DFS(int v);
+//
+//int main(void)
+//{
+//    ios::sync_with_stdio(false);
+//    cin.tie(NULL);
+//    cout.tie(NULL);
+//
+//    int N, M;
+//    cin >> N >> M;
+//    A.resize(N + 1);
+//    visited = vector<bool>(N + 1, false);
+//
+//    for (int i = 0; i < M; i++)
+//    {
+//        int s, e;
+//        cin >> s >> e;
+//        A[s].push_back(e);
+//        A[e].push_back(s);
+//    }
+//
+//    int g_count = 0;
+//
+//    for (int i = 1; i < N + 1; i++)
+//    {
+//        if (!visited[i])
+//        {
+//            g_count++;
+//            DFS(i);
+//        }
+//    }
+//    cout << g_count << "\n";
+//}
+//
+//void DFS(int v)
+//{
+//    if (visited[v])
+//        return;
+//
+//    visited[v] = true;
+//
+//    for (int i : A[v])
+//    {
+//        if (visited[i] == false)
+//            DFS(i);
+//    }
+//}
+
 #include <iostream>
 #include <vector>
 using namespace std;
 
-static vector<vector<int>> A;
-static vector<bool> visited;
-void DFS(int v);
+vector<bool> visited;
+vector<vector<int>> adjucencyList;
+int answer;
+
+void DFS_Stack(int node);
+void DFS_Recursive(int node);
 
 int main(void)
 {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    int N;
+    int M;
 
-    int N, M;
     cin >> N >> M;
-    A.resize(N + 1);
-    visited = vector<bool>(N + 1, false);
+    visited.resize(N + 1, 0);
+    adjucencyList.resize(N + 1);
 
     for (int i = 0; i < M; i++)
     {
-        int s, e;
-        cin >> s >> e;
-        A[s].push_back(e);
-        A[e].push_back(s);
+        int n, m;
+        cin >> n >> m;
+        adjucencyList[n].push_back(m);
+        adjucencyList[m].push_back(n);
     }
 
-    int g_count = 0;
-
-    for (int i = 1; i < N + 1; i++)
+    for (int i = 1; i <= N; i++)
     {
-        if (!visited[i])
-        {
-            g_count++;
-            DFS(i);
-        }
+        //DFS_Stack(i);
+
+        if (visited[i] == false)
+            answer++;
+        DFS_Recursive(i);
     }
-    cout << g_count << "\n";
+
+    cout << answer << endl;
+    return 0;
 }
 
-void DFS(int v)
+void DFS_Stack(int node)
 {
-    if (visited[v])
+    vector<int> st;
+    
+    if (visited[node] == true)
+        return;
+    
+    answer++;
+    st.push_back(node);
+    visited[node] = true;
+    while (!st.empty())
+    {
+        int tmp = st[st.size() - 1];
+        st.pop_back();
+        for (int i : adjucencyList[tmp])
+        {
+            if (visited[i] != true)
+            {
+                st.push_back(i);
+                visited[i] = true;
+            }
+        }
+    }
+}
+
+void DFS_Recursive(int node)
+{
+    if (visited[node] == true)
         return;
 
-    visited[v] = true;
 
-    for (int i : A[v])
+    visited[node] = true;
+    for (int i : adjucencyList[node])
     {
-        if (visited[i] == false)
-            DFS(i);
+        DFS_Recursive(i);
     }
 }

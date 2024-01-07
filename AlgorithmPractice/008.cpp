@@ -57,60 +57,143 @@
 //}
 
 
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
+//using namespace std;
+//
+//vector<int> vec;
+//int main(void)
+//{
+//    int N;
+//    int answer = 0;
+//
+//    cin >> N;
+//    vec.reserve(N);
+//    for (int i = 0; i < N; i++)
+//    {
+//        cin >> answer;
+//        vec.push_back(answer);
+//    }
+//
+//    sort(vec.begin(), vec.end());
+//
+//    if (N < 3)
+//    {
+//        cout << 0 << endl;
+//        return 0;
+//    }
+//
+//    answer = 0;
+//    for (int k = 0; k < N; k++)
+//    {
+//        int find = vec[k];
+//        int start = 0;
+//        int end = 1;
+//        while (1)
+//        {
+//            if (end >= k)
+//                break;
+//            int sum = vec[start] + vec[end];
+//            if (sum == find)
+//            {
+//                answer++;
+//                start++;
+//            }
+//            else if (sum < find)
+//            {
+//                end++;
+//            }
+//            else if (sum > find)
+//            {
+//                break;
+//            }
+//        }
+//    }
+//
+//    cout << answer << endl;
+//    return 0;
+//}
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
-vector<int> vec;
+
 int main(void)
 {
     int N;
-    int answer = 0;
 
     cin >> N;
-    vec.reserve(N);
+    vector<long> vec(N, 0);
+
     for (int i = 0; i < N; i++)
     {
-        cin >> answer;
-        vec.push_back(answer);
+        cin >> vec[i];
     }
 
     sort(vec.begin(), vec.end());
 
-    if (N < 3)
-    {
-        cout << 0 << endl;
-        return 0;
-    }
+    int answer = 0;
 
-    answer = 0;
-    for (int k = 0; k < N; k++)
+    for (int i = 0; i < N; i++)
     {
-        int find = vec[k];
-        int start = 0;
-        int end = 1;
+        int s = 0;
+        int e = N - 1;
         while (1)
         {
-            if (end >= k)
+            long sum = vec[s] + vec[e];
+            if (s >= e)
                 break;
-            int sum = vec[start] + vec[end];
-            if (sum == find)
+            if (sum == vec[i])
             {
-                answer++;
-                start++;
+                if (s != i && e != i)
+                {
+                    answer++;
+                    break;
+                }
+                else if (s == i)
+                    s++;
+                else if (e == i)
+                    e--;
             }
-            else if (sum < find)
+            else if (sum < vec[i])
             {
-                end++;
+                s++;
             }
-            else if (sum > find)
+            else // sum > vec[i]
             {
-                break;
+                e--;
             }
         }
     }
 
     cout << answer << endl;
+
     return 0;
 }
+
+/*
+* ¹Ý·Ê
+* 
+8
+1 2 3 5 7 9 11 13
+6
+
+4
+1 2 2 3
+1
+
+4
+1 1 2 3
+2
+
+5
+-1 -2 0 -1 -2
+4
+
+5
+0 0 0 0 1
+4
+*/
