@@ -117,7 +117,7 @@
     <ClCompile Include="026.cpp">
       <Filter>소스 파일\두번째</Filter>
     </ClCompile>
-    <ClCompile Include="027.cpp">
+    <ClCompile Include="027%28IM%29.cpp">
       <Filter>소스 파일\두번째</Filter>
     </ClCompile>
     <ClCompile Include="028.cpp">
